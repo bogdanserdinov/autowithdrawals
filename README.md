@@ -4,10 +4,10 @@ Tool to automate withdraw on-chain BTC from Kaminari to given address. All code 
 
 ## Usage:
 
-To start CLI tool you need to fill `.env` file, where you should specify max account balance, in case when your account balance > expected auto withdrawals will be initiated to specified address.
+To start CLI tool firstly you need to fill `.env` file.
 
-Command to start service:
+### Command to start service:
 
-`go run main.go by-amount` - command that will check your account balance every hour, and if needed will initiate on-chain tx to your 'back-up' address.
+`go run main.go by-amount` - command that will check account balance every hour, and if needed will initiate on-chain tx to your 'back-up' address.
 
 `go run main.go by-date` - command that will initiate payment every given interval.

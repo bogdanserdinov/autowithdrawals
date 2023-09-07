@@ -1,11 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
-	"github.com/caarlos0/env/v6"
-	"github.com/joho/godotenv"
 	"github.com/urfave/cli/v2"
 
 	"autowithdrawals/services"
@@ -14,13 +13,16 @@ import (
 func Config() (*services.Config, error) {
 	cfg := new(services.Config)
 
-	err := godotenv.Overload(".env")
+	file, err := os.Open("config.json")
 	if err != nil {
+		fmt.Printf("could not open file with cfg: %v", err)
 		return nil, err
 	}
 
-	err = env.Parse(cfg)
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&cfg)
 	if err != nil {
+		fmt.Printf("could parse cfg file: %v", err)
 		return nil, err
 	}
 

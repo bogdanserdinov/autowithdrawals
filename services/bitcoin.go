@@ -11,11 +11,11 @@ import (
 )
 
 type Config struct {
-	MaxAmount       int64  `env:"MAX_AMOUNT"`
-	WithdrawAddress string `env:"WITHDRAWAL_ADDRESS,notEmpty"`
-	CronSpecDate    string `env:"CRON_SPEC_DATE"`
-	ApiKey          string `env:"KAMINARI_API_KEY,notEmpty"`
-	ApiUrl          string `env:"KAMINARI_API_URL,notEmpty"`
+	MaxAmount       int64  `json:"maxAmount"`
+	WithdrawAddress string `json:"withdrawAddress"`
+	CronSpecDate    string `json:"cronSpecDate"`
+	ApiKey          string `json:"apiKey"`
+	ApiUrl          string `json:"apiUrl"`
 }
 
 type Client struct {

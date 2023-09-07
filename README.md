@@ -4,15 +4,7 @@ Tool to automate withdraw on-chain BTC from Kaminari to given address. All code 
 
 ## Usage:
 
-To start CLI tool firstly you need to fill `.env` file.
-
-```sh
-MAX_AMOUNT=
-CRON_SPEC_DATE=
-WITHDRAWAL_ADDRESS=
-KAMINARI_API_URL=
-KAMINARI_API_KEY=
-```
+To start CLI tool firstly you need to fill `config.json` file.
 
 ### Command to start service:
 
